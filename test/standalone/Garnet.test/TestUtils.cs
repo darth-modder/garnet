@@ -858,7 +858,8 @@ namespace Garnet.test
             int compactionMaxSegments = 32,
             string segmentSize = "1g",
             bool? nativeAllocator = null,
-            string bufferPoolMemoryBudget = null
+            string bufferPoolMemoryBudget = null,
+            string networkBufferSize = null
         )
         {
             if (useAzureStorage)
@@ -903,6 +904,7 @@ namespace Garnet.test
                 CheckpointDir = checkpointDir,
                 EndPoints = endpoints ?? [EndPoint],
                 DisablePubSub = disablePubSub,
+                NetworkBufferSize = networkBufferSize,
                 Recover = tryRecover,
                 IndexMemorySize = indexSize,
                 UseNativeAllocator = nativeAllocator ?? false,
